@@ -72,7 +72,6 @@ video {
   border: 0;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -191,32 +190,59 @@ p {
 }
 
 .listings-container {
-  background-color: #B394FF;
+  background-color: #b394ff;
   padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 .listings-container .pet-card {
-  background-color: #FFFFFF;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  max-width: 300px;
+  width: 100%;
   text-align: center;
-  transition: box-shadow 0.3s ease-in-out;
+  overflow: hidden;
 }
 .listings-container .pet-card:hover {
-  box-shadow: 0 0 15px rgba(156, 107, 255, 0.7);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.listings-container .pet-card img {
+  width: 100%;
+  height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.listings-container .pet-card img:hover {
+  transform: scale(1.05);
 }
 .listings-container .pet-card h2 {
-  color: #FF857F;
+  color: #000000;
   margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 .listings-container .pet-card p {
-  color: #F5EBFF;
+  color: #000000;
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 .listings-container .pet-card a {
-  color: #FFD166;
+  color: #ff857f;
   font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.listings-container .pet-card a:hover {
+  color: #ff857f;
 }/*# sourceMappingURL=PetListingPage.css.map */

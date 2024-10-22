@@ -72,7 +72,6 @@ video {
   border: 0;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -191,7 +190,7 @@ p {
 }
 
 .header {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 2rem 0;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -220,9 +219,9 @@ p {
   transition: color 0.3s ease-in-out;
 }
 .header__nav .header__side-nav .header__btn:hover {
-  color: #9C6BFF;
+  color: #9c6bff;
 }
 .header__nav .header__side-nav .header__btn.active {
-  color: #FF857F;
+  color: #ff857f;
   font-weight: bold;
 }/*# sourceMappingURL=Header.css.map */

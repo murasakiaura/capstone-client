@@ -1,16 +1,13 @@
-@import '../../styles/partials/global.scss';
-@import '../../styles/partials/mixin.scss';
+@import "../../styles/partials/global.scss";
+@import "../../styles/partials/mixin.scss";
 
-
-/* Home Page Styling */
 .home-page {
-  /* Hero Block */
   .hero {
     background-color: $secondary-color1;
     color: $secondary-color2;
     text-align: left;
     padding: 5rem 0;
-    
+
     display: flex;
     align-items: center;
     gap: 3rem;
@@ -30,26 +27,25 @@
       width: 50%;
       transform: translateY(20px);
       opacity: 0;
-      animation: fadeInUp 1s forwards ease-out 0.5s; 
+      animation: fadeInUp 1s forwards ease-out 0.5s;
 
       @include tablet {
         font-size: 6rem;
-        line-height:8rem;
+        line-height: 8rem;
       }
     }
 
     &__button {
       background-color: $primary-color1;
       color: $secondary-color1;
-      padding: 1rem 2rem;
+      padding: 2rem 4rem;
       border-radius: $border-radius;
-      @include hover-glow; 
+      @include hover-glow;
       transform: translateY(40px);
       opacity: 0;
-      animation: fadeInUp 1s forwards ease-out 0.7s; 
-      margin-left:40%;
-  
-
+      animation: fadeInUp 1s forwards ease-out 0.7s;
+      margin-left: 40%;
+      font-size: 2rem;
     }
 
     &__image {
@@ -63,24 +59,21 @@
     }
 
     &__section {
-      display:$display;
-      flex-direction:row;
+      display: $display;
+      flex-direction: row;
       margin: 4rem 0 3rem 0;
     }
   }
 
-  /* Main Section Block */
-  /* Main Section */
   .main-section {
     background-color: $secondary-color4;
     padding: 5rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-  
-    /* Subtle background element for futuristic feel */
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -10%;
       left: 50%;
@@ -91,13 +84,13 @@
       opacity: 0.1;
       transform: translateX(-50%);
     }
-  
+
     &__container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
-  
+
     &__title {
       font-size: 3.2rem;
       color: $secondary-color1;
@@ -106,104 +99,102 @@
       letter-spacing: 0.05rem;
       animation: fadeIn 1s ease-in-out;
       line-height: 3rem;
-  
+
       @include tablet {
         font-size: 3.6rem;
       }
-  
+
       @include desktop {
         font-size: 4rem;
       }
     }
-  
+
     &__description {
       font-size: 1.6rem;
       color: $secondary-color2;
       line-height: 2.4rem;
       margin-bottom: 3rem;
       animation: fadeInUp 1.2s ease-in-out forwards;
-  
+
       @include tablet {
         font-size: 1.8rem;
       }
-  
+
       @include desktop {
         font-size: 2rem;
       }
     }
-  
+
     &__category {
       display: flex;
       flex-direction: column;
       gap: 3rem;
-  
+
       @include tablet {
         flex-direction: row;
         justify-content: center;
       }
     }
-  
+
     &__category-container {
       flex: 1;
       max-width: 300px;
       margin: 0 auto;
       text-align: center;
     }
-      &__caption {
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: $secondary-color1;
-        margin-bottom: 1rem;
-        animation: fadeIn 1s ease-in-out;
-      }
-  
-      &__image {
-        width: 100%;
-        max-width: 200px;
-        height: auto;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-  
-        &:hover {
-          transform: scale(1.05);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-  
-        @include tablet {
-          max-width: 250px;
-        }
-  
-        @include desktop {
-          max-width: 300px;
-        }
-      }
+    &__caption {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: $secondary-color1;
+      margin-bottom: 1rem;
+      animation: fadeIn 1s ease-in-out;
     }
-  
-    /* Animations */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
+
+    &__image {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
       }
-      100% {
-        opacity: 1;
+
+      @include tablet {
+        max-width: 250px;
       }
-    }
-  
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+
+      @include desktop {
+        max-width: 300px;
       }
     }
   }
 
-/* About Section */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 .about-section {
   background-color: $primary-color4;
   padding: 6rem 0;
@@ -212,9 +203,8 @@
   position: relative;
   overflow: hidden;
 
-  /* Background decorative elements */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: -10%;
     bottom: -10%;
@@ -254,7 +244,6 @@
   }
 }
 
-/* Animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -284,4 +273,4 @@
   100% {
     opacity: 1;
   }
-};
+}

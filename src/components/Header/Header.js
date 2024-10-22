@@ -1,5 +1,3 @@
-
-//import logoMobile from "../../assets/Logo/InStock-Logo_1x.png";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import "./Header.scss";
@@ -9,10 +7,9 @@ const Header = () => {
   const navigate = useNavigate();
   const [activeButton, setActiveButton] = useState("");
 
-  // Update the active button based on the current path
   useEffect(() => {
     const firstPathItem = location.pathname.split("/")[1];
-    
+
     if (firstPathItem === "") {
       setActiveButton("home");
     } else if (firstPathItem === "listings") {
@@ -24,7 +21,6 @@ const Header = () => {
     }
   }, [location]);
 
-  // Handle navigation when a button is clicked
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -41,19 +37,25 @@ const Header = () => {
             Home
           </button>
           <button
-            className={`header__btn ${activeButton === "listings" ? "active" : ""}`}
+            className={`header__btn ${
+              activeButton === "listings" ? "active" : ""
+            }`}
             onClick={() => handleNavigation("/listings")}
           >
             Browse
           </button>
           <button
-            className={`header__btn ${activeButton === "about" ? "active" : ""}`}
+            className={`header__btn ${
+              activeButton === "about" ? "active" : ""
+            }`}
             onClick={() => handleNavigation("/about")}
           >
             About Us
           </button>
           <button
-            className={`header__btn ${activeButton === "contact" ? "active" : ""}`}
+            className={`header__btn ${
+              activeButton === "contact" ? "active" : ""
+            }`}
             onClick={() => handleNavigation("/contact")}
           >
             Contact

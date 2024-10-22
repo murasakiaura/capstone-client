@@ -1,22 +1,18 @@
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
-// Mixin for tablet media queries
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
   }
 }
 
-// Mixin for desktop media queries
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
   }
 }
 
-
-// Font mixin for medium-sized text
 @mixin fontMedium {
   font-size: 1.3rem;
   line-height: 2rem;
@@ -29,7 +25,6 @@ $desktop-breakpoint: 1280px;
   }
 }
 
-// Font mixin for small-sized text
 @mixin fontSmall {
   font-size: 1.1rem;
   line-height: 1.6rem;
@@ -42,7 +37,6 @@ $desktop-breakpoint: 1280px;
   }
 }
 
-// Mixin for hover glow effect
 @mixin hover-glow {
   transition: box-shadow 0.3s ease-in-out;
   &:hover {

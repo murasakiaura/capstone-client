@@ -1,23 +1,23 @@
 @use "./mixin.scss" as *;
 
 //primary color
-$primary-color1: #9C6BFF;
-$primary-color2: #FF857F;
-$primary-color3: #FFD166;
-$primary-color4: #3EA6FF;
+$primary-color1: #9c6bff;
+$primary-color2: #ff857f;
+$primary-color3: #ffd166;
+$primary-color4: #3ea6ff;
 
 //secondary color
-$secondary-color1: #FFFFFF;
+$secondary-color1: #ffffff;
 $secondary-color2: #000000;
-$secondary-color3: #F5EBFF;
-$secondary-color4: #B394FF;
+$secondary-color3: #f5ebff;
+$secondary-color4: #b394ff;
 
 //screen
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1024px;
 
 //display
-$display: flex; 
+$display: flex;
 
 //font
 
@@ -41,7 +41,6 @@ $display: flex;
   font-weight: 300;
   font-style: normal;
 }
-
 
 html,
 body,
@@ -99,7 +98,6 @@ video {
   border: 0;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -209,11 +207,9 @@ p {
   }
 }
 
-// Base Font Sizes
 $base-font-size: 16px;
 $large-font-size: 1.8rem;
 $medium-font-size: 1.6rem;
 $small-font-size: 1.4rem;
 
-// Border Radius
 $border-radius: 0.75rem;

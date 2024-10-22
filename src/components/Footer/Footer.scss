@@ -1,12 +1,11 @@
-
 @use "../../styles/partials/global.scss" as *;
 @use "../../styles/partials/mixin.scss" as *;
 
 .footer {
-  display:$display;
+  display: $display;
   justify-content: center;
   align-items: center;
- 
+
   color: $secondary-color2;
   padding: 2rem 1rem 2rem 1rem;
   bottom: 0;
@@ -21,9 +20,9 @@
   }
 
   &__nav-list {
-    display:$display;
-    flex-direction:row;
-    justify-content:space-evenly;
+    display: $display;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 

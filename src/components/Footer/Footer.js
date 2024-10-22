@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__container">
         <p className="footer__text">
-          &copy; 2024 Adopt an Animal. All rights reserved.
+          &copy; 2024 Little Buddy Street. All rights reserved.
         </p>
         <nav className="footer__nav">
           <ul className="footer__nav-list">

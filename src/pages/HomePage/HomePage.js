@@ -18,15 +18,13 @@ const HomePage = () => {
         <div className="hero__container">
           <h2 className="hero__title">Find Your Perfect Buddy</h2>
           <div className="hero__section">
-            <img className="hero__image" src={hero} alt="Hero image" />
+            <img className="hero__image" src={hero} alt="Hero" />
             <p className="hero__description">
               Adopt a pet or sponsor a sea creature and make a global impact,
               from land to sea, making the world a kinder place.
             </p>
           </div>
-          <Link to="/listings" className="hero__button">
-            Browse
-          </Link>
+          <Link to="/listings" className="hero__button">Browse</Link>
         </div>
       </section>
 

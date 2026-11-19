@@ -1,38 +1,76 @@
 import React, { useEffect, useState } from "react";
 import "./PetDetailPage.scss";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 const PetDetailPage = () => {
   const { id } = useParams();
   const [pet, setPet] = useState(null);
+  const [status, setStatus] = useState("loading");
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchPetDetails = async () => {
+      setPet(null);
+      setStatus("loading");
+
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/petrescue/listings/${id}`
+          `${API_BASE_URL}/api/petrescue/pet/${encodeURIComponent(id)}`,
+          { signal: controller.signal }
         );
         setPet(response.data);
+        setStatus("success");
       } catch (error) {
-        console.error("Error fetching pet details:", error);
+        if (controller.signal.aborted) return;
+        setStatus(error.response?.status === 404 ? "not-found" : "error");
       }
     };
 
     fetchPetDetails();
+    return () => controller.abort();
   }, [id]);
 
-  if (!pet) return <div>Work in Progress - Stay Tuned!</div>;
+  if (status === "loading") {
+    return <main className="detail-container" role="status">Loading animal details...</main>;
+  }
+
+  if (status === "not-found") {
+    return (
+      <main className="detail-container">
+        <h2>Animal not found</h2>
+        <p>This listing may no longer be available.</p>
+        <Link to="/listings">Back to animals</Link>
+      </main>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <main className="detail-container" role="alert">
+        <h2>We couldn't load this animal</h2>
+        <p>Please try again later.</p>
+        <Link to="/listings">Back to animals</Link>
+      </main>
+    );
+  }
 
   return (
-    <div className="detail-container">
-      <img src={`http://localhost:5000${pet.image_path}`} alt={pet.name} />
+    <main className="detail-container">
+      {pet.image_path && (
+        <img src={`${API_BASE_URL}${pet.image_path}`} alt={pet.name || pet.species || "Animal"} />
+      )}
+      <h2>{pet.name || pet.species}</h2>
       <p>Species: {pet.species}</p>
-      <p>Breed: {pet.breeds_display}</p>
-      <p>Location: {pet.state}</p>
-      <p>Adoption Fee: {pet.adoption_fee}</p>
-      <p>{pet.personality}</p>
-    </div>
+      <p>Breed: {pet.breed || "Not specified"}</p>
+      <p>Location: {pet.location || "Not specified"}</p>
+      {pet.adoption_fee != null && <p>Adoption Fee: {pet.adoption_fee}</p>}
+      {pet.personality && <p>{pet.personality}</p>}
+      <Link to="/listings">Back to animals</Link>
+    </main>
   );
 };
 
